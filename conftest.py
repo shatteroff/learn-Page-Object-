@@ -11,7 +11,7 @@ def pytest_addoption(parser):
 
 
 @pytest.fixture(scope="function")
-def browser(request,language):
+def browser(request, language):
     browser_name = request.config.getoption("browser_name")
     browser = None
     if browser_name == "chrome":
@@ -33,4 +33,3 @@ def browser(request,language):
 def language(request):
     language_name = request.config.getoption('language')
     return language_name
-    # language = 'en'
